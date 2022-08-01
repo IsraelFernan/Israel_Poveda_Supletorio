@@ -63,26 +63,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    <TextView
-        android:id="@+id/botonPersonal"
-        android:layout_width="237dp"
-        android:layout_height="60dp"
-        android:background="#D0D3D4"
-        android:clickable="false"
-        android:gravity="center"
-        android:onClick="clickPersonal"
+    <Button
+        android:id="@+id/IPbotonPersonal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
         android:text="PERSONAL"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.047" />
 
-    <TextView
-        android:id="@+id/botonNegocios"
-        android:layout_width="237dp"
-        android:layout_height="60dp"
-        android:background="#D0D3D4"
-        android:gravity="center"
+    <Button
+        android:id="@+id/IPbotonNegocios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="56dp"
         android:text="NEGOCIOS"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <ListView
+        android:id="@+id/IPlistas"
+        android:layout_width="409dp"
+        android:layout_height="518dp"
+        android:layout_marginTop="208dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="2dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
