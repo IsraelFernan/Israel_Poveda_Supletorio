@@ -3,9 +3,11 @@ package fisei.uta.israel_poveda_supletorio;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
@@ -33,8 +35,19 @@ public class Tareas extends AppCompatActivity {
         ImageView IPeliminar = findViewById(R.id.IPeliminar);
         Picasso.get().load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaR-j-nYEgA-B7qQD3z0hCM8eUwNSfH-3_Fw&usqp=CAU").into(IPeliminar);
         ImageView IPiconoLista = findViewById(R.id.IPiconoLista);
+        IPiconoLista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Tareas.this, "Verga", Toast.LENGTH_SHORT).show();
+            }
+        });
         Picasso.get().load("https://cdn.pixabay.com/photo/2017/06/10/07/18/list-2389219_960_720.png").into(IPiconoLista);
+        TextView botonPersonal = findViewById(R.id.botonPersonal);
+    }
 
+    public void clickPersonal(View view){
+        listarPersonal("listarTareasPersonal");
+        Toast.makeText(getApplicationContext(), "Personal", Toast.LENGTH_SHORT).show();
     }
 
     public void listarPersonal(String metodo){
@@ -51,7 +64,7 @@ public class Tareas extends AppCompatActivity {
                     Toast.makeText(Tareas.this,"Codigo: "+response.code(),Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if(metodo == "listarTareasPersonal"){
+                if(metodo.equals("listarTareasPersonal")){
                     ListView listaPersonal = findViewById(R.id.IPlistas);
                     List<Personal> datos = response.body();
                     for(Personal post: datos){

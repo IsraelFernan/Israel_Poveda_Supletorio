@@ -64,30 +64,25 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/textView6"
-        android:layout_width="200dp"
+        android:id="@+id/botonPersonal"
+        android:layout_width="237dp"
         android:layout_height="60dp"
         android:background="#D0D3D4"
+        android:clickable="false"
         android:gravity="center"
+        android:onClick="clickPersonal"
         android:text="PERSONAL"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
-        android:id="@+id/textView7"
-        android:layout_width="200dp"
+        android:id="@+id/botonNegocios"
+        android:layout_width="237dp"
         android:layout_height="60dp"
         android:background="#D0D3D4"
         android:gravity="center"
         android:text="NEGOCIOS"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <ListView
-        android:id="@+id/IPlistas"
-        android:layout_width="409dp"
-        android:layout_height="532dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="198dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
