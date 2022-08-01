@@ -1,7 +1,7 @@
 package Interfaces;
 
 import java.util.List;
-import Modelos.Personal;
+
 import Modelos.Usuarios;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -14,5 +14,5 @@ public interface ApiUsuarios {
     Call<List<Usuarios>> obtenerDatos();
 
     @POST("Usuarios.json")
-    Call<ResponseBody> insertarDatos(@Body Personal personal);
+    Call<ResponseBody> insertarDatos(@Body Usuarios personal);
 }
