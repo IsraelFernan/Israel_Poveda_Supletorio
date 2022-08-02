@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     <EditText
-        android:id="@+id/IPgregarNota"
+        android:id="@+id/IPagregarNota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnagregarAgTarea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -78,6 +78,6 @@
         android:text="Estado"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/IPgregarNota" />
+        app:layout_constraintTop_toBottomOf="@+id/IPagregarNota" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,9 @@ package fisei.uta.israel_poveda_supletorio;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.toolbox.AsyncHttpStack;
@@ -25,10 +28,34 @@ public class Agregartarea extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregartarea);
         String tipo = getIntent().getStringExtra("tipo");
-        if(tipo.equals("Personal")){
-
-        }
+        Button agregar = findViewById(R.id.btnagregarAgTarea);
+        agregar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(tipo.equals("Personal")){
+                    TextView nombre = findViewById(R.id.IPagregarNombre);
+                    TextView nota = findViewById(R.id.IPagregarNota);
+                    TextView estado = findViewById(R.id.IPagregarEstado);
+                    Personal personal = new Personal();
+                    personal.setNombre(String.valueOf(nombre.getText()));
+                    personal.setNota(String.valueOf(nota.getText()));
+                    personal.setEstado(String.valueOf(estado));
+                    agregarTareaPersonal(personal);
+                }
+                if(tipo.equals("Negocios")){
+                    TextView nombre = findViewById(R.id.IPagregarNombre);
+                    TextView nota = findViewById(R.id.IPagregarNota);
+                    TextView estado = findViewById(R.id.IPagregarEstado);
+                    Negocios negocios = new Negocios();
+                    negocios.setNombre(String.valueOf(nombre.getText()));
+                    negocios.setNota(String.valueOf(nota.getText()));
+                    negocios.setEstado(String.valueOf(estado));
+                    agregarTareaNegocio(negocios);
+                }
+            }
+        });
     }
+
     public void agregarTareaPersonal(Personal personal){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://www.israel.somee.com/api/")
