@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/israp/AndroidStudioProjects/Israel_Poveda_Supletorio/app/src/main/res/layout/activity_agregar_tarea.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/israp/AndroidStudioProjects/Israel_Poveda_Supletorio/app/src/main/res/layout/activity_main.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/israp/AndroidStudioProjects/Israel_Poveda_Supletorio/app/src/main/res/layout/activity_tareas.xml" value="0.25" />
         <entry key="..\:/Users/israp/AndroidStudioProjects/Israel_Poveda_Supletorio/app/src/main/res/layout/activity_tareas2.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/israp/AndroidStudioProjects/Israel_Poveda_Supletorio/app/src/main/res/layout/activity_tipotarea.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/israp/AndroidStudioProjects/Israel_Poveda_Supletorio/app/src/main/res/layout/fragment_tareas2.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/israp/AndroidStudioProjects/Israel_Poveda_Supletorio/app/src/main/res/layout/item.xml" value="0.17074275362318841" />
       </map>

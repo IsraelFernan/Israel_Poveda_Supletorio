@@ -2,6 +2,7 @@ package fisei.uta.israel_poveda_supletorio;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,6 +37,7 @@ public class Tareas extends AppCompatActivity implements AdapterView.OnItemClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tareas);
         ImageView IPeliminar = findViewById(R.id.IPeliminar);
+        Button botonAgregar = findViewById(R.id.IPagregar);
         Picasso.get().load("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaR-j-nYEgA-B7qQD3z0hCM8eUwNSfH-3_Fw&usqp=CAU").into(IPeliminar);
         ImageView IPiconoLista = findViewById(R.id.IPiconoLista);
         IPiconoLista.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +61,13 @@ public class Tareas extends AppCompatActivity implements AdapterView.OnItemClick
                 listarNegocios("listarTareasNegocios");
             }
         });
+        botonAgregar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Tareas.this,Tipotarea.class);
+                startActivity(i);
+            }
+        });
     }
 
     public void listarPersonal(String metodo){
@@ -77,6 +86,7 @@ public class Tareas extends AppCompatActivity implements AdapterView.OnItemClick
                 }
                 if(metodo.equals("listarTareasPersonal")){
                     List<Personal> listaAdaptadorPersonal = new ArrayList<>();
+                    ListView lista = findViewById(R.id.IPlistas);
                     AdaptadorPersonal adaptadorPersonal;
                     ListView listaPersonal = findViewById(R.id.IPlistas);
                     List<Personal> datos = response.body();
@@ -85,6 +95,7 @@ public class Tareas extends AppCompatActivity implements AdapterView.OnItemClick
                     }
                     adaptadorPersonal = new AdaptadorPersonal(Tareas.this,R.layout.item,listaAdaptadorPersonal);
                     listaPersonal.setAdapter(adaptadorPersonal);
+                    lista.setOnItemClickListener(Tareas.this);
                 }
             }
             @Override
@@ -109,6 +120,7 @@ public class Tareas extends AppCompatActivity implements AdapterView.OnItemClick
                     return;
                 }
                 if(metodo.equals("listarTareasNegocios")){
+                    ListView lista = findViewById(R.id.IPlistas);
                     List<Negocios> listaAdaptadorNegocios = new ArrayList<>();
                     AdaptadorNegocios adaptadorNegocios;
                     ListView listaNegocios = findViewById(R.id.IPlistas);
@@ -118,6 +130,7 @@ public class Tareas extends AppCompatActivity implements AdapterView.OnItemClick
                     }
                     adaptadorNegocios = new AdaptadorNegocios(Tareas.this,R.layout.item,listaAdaptadorNegocios);
                     listaNegocios.setAdapter(adaptadorNegocios);
+                    lista.setOnItemClickListener(Tareas.this);
                 }
             }
             @Override
@@ -125,5 +138,10 @@ public class Tareas extends AppCompatActivity implements AdapterView.OnItemClick
                 Toast.makeText(Tareas.this,t.getMessage(),Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(this, String.valueOf(position), Toast.LENGTH_SHORT).show();
     }
 }

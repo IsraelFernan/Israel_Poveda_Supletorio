@@ -17,6 +17,12 @@
         android:theme="@style/Theme.Israel_Poveda_Supletorio"
         tools:targetApi="31">
         <activity
+            android:name=".Tipotarea"
+            android:exported="false" />
+        <activity
+            android:name=".AgregarTarea"
+            android:exported="false" />
+        <activity
             android:name=".Tareas2"
             android:exported="false"
             android:label="@string/title_activity_tareas2"
