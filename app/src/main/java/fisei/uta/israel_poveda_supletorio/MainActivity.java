@@ -33,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
                 listarUsuarios("validarUsuario");
             }
         });
+        Button registrar = findViewById(R.id.IPregistrarseMain);
+        registrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this,Registrarse.class);
+                startActivity(i);
+            }
+        });
     }
     public void listarUsuarios(String metodo){
         Retrofit retrofit = new Retrofit.Builder()

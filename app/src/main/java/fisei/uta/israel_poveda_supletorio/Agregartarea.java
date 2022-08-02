@@ -25,6 +25,9 @@ public class Agregartarea extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregartarea);
         String tipo = getIntent().getStringExtra("tipo");
+        if(tipo.equals("Personal")){
+
+        }
     }
     public void agregarTareaPersonal(Personal personal){
         Retrofit retrofit = new Retrofit.Builder()
@@ -78,8 +81,8 @@ public class Agregartarea extends AppCompatActivity {
             }
         });
     }
-    public boolean elementosVacios(){
+    /*public boolean elementosVacios(){
 
         return
-    }
+    }*/
 }
