@@ -52,6 +52,7 @@
         android:layout_marginTop="12dp"
         android:editable="false"
         android:ems="10"
+        android:enabled="false"
         android:gravity="center"
         android:inputType="textPersonName"
         android:text="ABIERTO"
@@ -75,7 +76,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Estado"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
-        tools:layout_editor_absoluteX="184dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
