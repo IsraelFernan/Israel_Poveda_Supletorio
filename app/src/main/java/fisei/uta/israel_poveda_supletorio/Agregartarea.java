@@ -83,6 +83,7 @@ public class Agregartarea extends AppCompatActivity {
         });
     }
     public void agregarTareaNegocio(Negocios negocios){
+        
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://www.israel.somee.com/api/")
                 .addConverterFactory(GsonConverterFactory.create())
